@@ -2,7 +2,7 @@ if(process.env.NODE_ENV != "production"){
     require('dotenv').config();
 }
 
-// console.log(process.env.SECRET);
+
 
 
 const express=require("express");
@@ -109,22 +109,6 @@ app.use((req,res,next)=>{
     next();
 });
 
-// app.get("/demouser",async (req,res)=>{
-
-//     let fakeUser=new User({
-
-//         email:"student@gmail.com",
-//         username:"delta-student",
-//     });
-
-//     let registeredUser=await User.register(fakeUser,"helloworld");
-//     res.send(registeredUser);
-
-
-// });
-
-
-
 
 
 app.use("/listings",listingRouter);
@@ -133,19 +117,7 @@ app.use("/listings/:id/reviews",reviewRouter);
 
 app.use("/",userRouter);
 
-// app.get("/testListing", async (req,res)=>{
-//     let sampleListing=new Listing({
-//         title:"My new Villla",
-//         description :"Near a Madgaon beach",
-//         price:1200,
-//         location:"Madgaon,Goa",
-//         country:"india",
-//     });
 
-//     await sampleListing.save();
-//     console.log("sample was saved");
-//     res.send("sucessfull testing");
-// });
 
 
 
